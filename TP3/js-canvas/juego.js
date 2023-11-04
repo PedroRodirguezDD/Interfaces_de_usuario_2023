@@ -206,10 +206,12 @@ function drawFigure(){
 
     if(ganador!=null){
         MostrarGanador(ganador);
+        btn_reiniciar();
         borrar_timer();
     }
     else if(fichas.length==0){
         mostrarMensajeGanador("Empataron");
+        btn_reiniciar();
         borrar_timer();
     }
     else{
@@ -758,6 +760,8 @@ canvas.addEventListener("click", function(e){
     if(clickX >= rectanguloX && clickX <=(rectanguloX + rectanguloWidth) && clickY >= rectanguloY && clickY <= (rectanguloY + rectanguloHeight)){
         turnoDe="1";
         pasarTurno("dos");
+        borrar=false;
+        ganador=null;
         reiniciar_timer();
         //reiniciar podria llevar para el menu en vez de llamar a juego
         juego(ficha_uno,ficha_dos,num_tablero);
