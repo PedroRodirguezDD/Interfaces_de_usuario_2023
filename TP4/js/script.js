@@ -55,8 +55,8 @@ window.onscroll = function () {
   }
 
 
-  //ANIMACION DEL PRIME FONDO
-  if(y>0 && y<400){
+  //ANIMACION DEL PRIMER FONDO
+  if(y>30 && y<450){
     spider_woman.style.marginTop = y * -.3 + "px";
     spider_peter.style.marginTop = y * -.3 + "px";
     spider_morales.style.marginTop = y * -.3 + "px";
@@ -67,6 +67,9 @@ window.onscroll = function () {
     edificioIzq.style.marginBottom = y * -.2 + "px";
     edificioDer.style.marginTop = y * .2 + "px";
     edificioMedio.style.marginBottom = y * -.2 + "px";
+
+    edificioDer.style.right= y * -.1 + "px";
+    edificioIzq.style.left= -50+y * -.1 + "px";
   }
 
   //ANIMACION DEL DUENDE VERDE

@@ -245,15 +245,39 @@ header img{
     color: rgb(2, 24, 126);
     -webkit-text-stroke:2px;
     margin-top: 1%;
-    transition: .5s;
+    animation: latido-btn-vuelta .3s ease-in-out 1 forwards;
 }
 
 .comprar:hover{
-    background-color: rgb(217, 199, 1);
-    transform: scale(1.07);
-    box-shadow:6px 6px rgba(2, 24, 126, 1);
+    color: black;
+    background-color: rgb(255, 238, 51);
     cursor: pointer;
-    transition: .5s;
+    animation: latido-btn .3s ease-in-out 1 forwards;
+}
+
+@keyframes latido-btn{
+
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(.95);
+    }
+    100%{
+        transform: scale(1.07);
+    }
+
+}
+
+@keyframes latido-btn-vuelta{
+
+    0%{
+        transform: scale(1.07);
+    }
+    100%{
+        transform: scale(1);
+    }
+
 }
 
 
@@ -640,8 +664,8 @@ p{
 
 .cielo{
     position: absolute;
-    top: 230px;
-    left: -29px;
+    top: 231px;
+    left: -28.5px;
     z-index: -100;
     transition: .1s;
 }
@@ -834,14 +858,14 @@ button.comprar-ahora{
     letter-spacing: 1.5px;
     color: rgb(2, 24, 126);
     -webkit-text-stroke:2px;
-    transition: .5s;
+    animation: latido-btn-vuelta .3s ease-in-out 1 forwards;
 }
 
 button.comprar-ahora:hover{
-    background-color: rgb(217, 199, 1);
-    transform: scale(1.07);
+    color: black;
+    background-color: rgb(255, 238, 51);
     cursor: pointer;
-    transition: .5s;
+    animation: latido-btn .3s ease-in-out 1 forwards;
 }
 
 
@@ -962,9 +986,11 @@ p.titulo-cielo-prefooter{
 }
 
 .suscribirse:hover{
-    background-color: rgb(217, 199, 1);
     cursor: pointer;
     transition: .5s;
+    color: black;
+    background-color: rgb(255, 238, 51);
+    width: 215px;
 }
 
 
