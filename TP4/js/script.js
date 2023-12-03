@@ -56,7 +56,7 @@ window.onscroll = function () {
 
 
   //ANIMACION DEL PRIMER FONDO
-  if(y>30 && y<450){
+  if(y>30 && y<550){
     spider_woman.style.marginTop = y * -.3 + "px";
     spider_peter.style.marginTop = y * -.3 + "px";
     spider_morales.style.marginTop = y * -.3 + "px";
@@ -73,8 +73,8 @@ window.onscroll = function () {
   }
 
   //ANIMACION DEL DUENDE VERDE
-  if(y>301 && y<1300){
-    duende.style.marginTop = -45 + y * .14 + "px";
+  if(y>400 && y<850){
+    duende.style.marginTop = -200 + y * .5 + "px";
   }
 
   //ANIMACION DE LAS 3 CARDS
@@ -264,10 +264,10 @@ const terceraCapa=document.querySelector(".tercera-capa");
 
 const cuartaCapa=document.querySelector(".cuarta-capa");
 
-const capa1= 400;
+const capa1= 900;
 const capa2= 100;
-const capa3= 500;
-const capa4= 600;
+const capa3= 900;
+const capa4= 900;
 const capa_pantera=50;
 
 parallax.addEventListener("mousemove", function(e){
@@ -327,4 +327,154 @@ window.addEventListener("load", function() {
     }
     updateLoaderText(progreso);
   }, 250); // Intervalo de actualización del porcentaje (cada 0.5 segundos)
+});
+
+
+
+
+
+
+/* OPCIONAL 5 --- ANIMACION HOVER DE LOS 3 SPIDERMANS */
+
+
+const img_fondo_tres_spidermans=document.getElementById("img-fondo-tres-spidermans");
+
+const spider_woman2=document.querySelector(".spider-woman2");
+const spider_peter2=document.querySelector(".spider-peter2");
+const spider_morales2=document.querySelector(".spider-morales2");
+
+const cielo_prefooter=document.querySelector(".cielo-prefooter");
+
+
+
+
+
+//CUANDO PASO CON EL MOUSE POR ARRIBA
+
+
+
+
+spider_peter2.addEventListener("mouseover", function(){
+  //img_fondo_tres_spidermans.style.animation='aparicion-img 1s linear 1 forwards';
+  setTimeout(() => {
+    img_fondo_tres_spidermans.style.animation='aparicion-img .2s linear 1 forwards';
+    img_fondo_tres_spidermans.src="img/fondo-peter.png";
+    cielo_prefooter.style='clip-path:polygon(0 .5%, 100% 9.5%, 100% 100%, 0% 100%)';
+  }, 200);
+  
+  spider_peter2.style.transform=`scale(1.1)`;
+  
+  spider_woman2.style.transform=`scale(0.9)`;
+  spider_woman2.style.filter='blur(5px)';
+
+  spider_morales2.style.transform=`scale(0.9)`;
+  spider_morales2.style.filter='blur(5px)';
+});
+
+
+spider_woman2.addEventListener("mouseover", function(){
+  //img_fondo_tres_spidermans.style.animation='aparicion-img 1s linear 1 forwards';
+  setTimeout(() => {
+    img_fondo_tres_spidermans.style.animation='aparicion-img .2s linear 1 forwards';
+    img_fondo_tres_spidermans.src="img/fondo-gwen.png";
+    cielo_prefooter.style='clip-path:polygon(0 .5%, 100% 9.5%, 100% 100%, 0% 100%)';
+  }, 200);
+  
+  
+
+  spider_woman2.style.transform=`scale(1.1)`;
+  
+  spider_peter2.style.transform=`scale(0.9)`;
+  spider_peter2.style.filter='blur(5px)';
+
+  spider_morales2.style.transform=`scale(0.9)`;
+  spider_morales2.style.filter='blur(5px)';
+});
+
+
+spider_morales2.addEventListener("mouseover", function(){
+  //img_fondo_tres_spidermans.style.animation='aparicion-img 1s linear 1 forwards';
+  setTimeout(() => {
+    img_fondo_tres_spidermans.style.animation='aparicion-img .2s linear 1 forwards';
+    img_fondo_tres_spidermans.src="img/fondo-miles.png";
+    cielo_prefooter.style='clip-path:polygon(0 .5%, 100% 9.5%, 100% 100%, 0% 100%)';
+  }, 200);
+  //img_fondo_tres_spidermans.src="img/fondo-miles.png";
+  
+
+  spider_morales2.style.transform=`scale(1.1)`;
+  
+  spider_peter2.style.transform=`scale(0.9)`;
+  spider_peter2.style.filter='blur(5px)';
+
+  spider_woman2.style.transform=`scale(0.9)`;
+  spider_woman2.style.filter='blur(5px)';
+});
+
+
+
+
+
+//CUANDO SACO EL MOUSE DE ARRIBA
+
+
+
+spider_peter2.addEventListener("mouseleave", function(){
+  img_fondo_tres_spidermans.style.animation='aparicion-img-vuelta .2s linear 1 forwards';
+  
+  setTimeout(() => {
+    img_fondo_tres_spidermans.src="";
+    cielo_prefooter.style='clip-path:null';
+  }, 200);
+
+
+  
+
+  spider_peter2.style.transform=`scale(1)`;
+  
+  spider_woman2.style.transform=`scale(1)`;
+  spider_woman2.style.filter='blur(0px)';
+
+  spider_morales2.style.transform=`scale(1)`;
+  spider_morales2.style.filter='blur(0px)';
+});
+
+spider_woman2.addEventListener("mouseleave", function(){
+  img_fondo_tres_spidermans.style.animation='aparicion-img-vuelta .2s linear 1 forwards';
+
+  setTimeout(() => {
+    img_fondo_tres_spidermans.src="";
+    cielo_prefooter.style='clip-path:null';
+  }, 200);
+
+  
+  
+
+  spider_woman2.style.transform=`scale(1)`;
+  
+  spider_peter2.style.transform=`scale(1)`;
+  spider_peter2.style.filter='blur(0px)';
+
+  spider_morales2.style.transform=`scale(1)`;
+  spider_morales2.style.filter='blur(0px)';
+});
+
+spider_morales2.addEventListener("mouseleave", function(){
+  img_fondo_tres_spidermans.style.animation='aparicion-img-vuelta .2s linear 1 forwards';
+  
+  setTimeout(() => {
+    img_fondo_tres_spidermans.src="";
+    cielo_prefooter.style='clip-path:null';
+  }, 200);
+
+  
+  
+
+  spider_morales2.style.transform=`scale(1)`;
+  
+  spider_peter2.style.transform=`scale(1)`;
+  spider_peter2.style.filter='blur(0px)';
+
+  spider_woman2.style.transform=`scale(1)`;
+  spider_woman2.style.filter='blur(0px)';
 });
